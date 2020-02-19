@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+enum FetchItemsResult {
+    case success([Item])
+    case failure(Error)
+}
+
 class ItemStore: NSObject {
 
     let persistentContainer: NSPersistentContainer = {
@@ -37,6 +42,20 @@ class ItemStore: NSObject {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+
+     // MARK: - Fetch Core Data Context
+    func fetchPersistedData(completion: @escaping (FetchItemsResult) -> Void) {
+
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        let viewContext = persistentContainer.viewContext
+
+        do {
+            let allItems = try viewContext.fetch(fetchRequest)
+            completion(.success(allItems))
+        } catch {
+            completion(.failure(error))
         }
     }
 }
