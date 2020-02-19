@@ -83,12 +83,12 @@
 		44C7B628222722A100A8A0CF /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3C6D762123FDB16C00C3F6F7 /* ItemStore.swift */,
 				3C6D761D23FDAEBD00C3F6F7 /* Item+CoreDataClass.swift */,
 				3C6D761E23FDAEBD00C3F6F7 /* Item+CoreDataProperties.swift */,
 				448856872239D544001EDDC4 /* Loanee.swift */,
 				3C6D761723FD9C9700C3F6F7 /* Collateral.swift */,
 				3C6D761423FD79CB00C3F6F7 /* LoanedItems.xcdatamodeld */,
-				3C6D762123FDB16C00C3F6F7 /* ItemStore.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
