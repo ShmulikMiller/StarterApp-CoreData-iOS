@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
+     var store: ItemStore!
     var items: [Item] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
